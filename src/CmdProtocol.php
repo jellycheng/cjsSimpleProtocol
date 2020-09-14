@@ -5,7 +5,7 @@ class CmdProtocol
 {
     protected $code = 0;
     protected $msg = 'success';
-    protected $data;
+    protected $data = '';
 
     public function getCode()
     {
@@ -37,6 +37,13 @@ class CmdProtocol
     public function setData($data)
     {
         $this->data = $data;
+        return $this;
+    }
+
+    public function resetCMD() {
+        $this->code = 0;
+        $this->msg = 'success';
+        $this->data = '';
         return $this;
     }
 
